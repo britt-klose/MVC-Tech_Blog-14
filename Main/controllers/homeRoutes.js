@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Blog, User } = require('../models');
+const { Blog, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 // GET all blogs and JOIN with user data
@@ -10,6 +10,9 @@ router.get('/', async (req, res) => {
         {
           model: User,
           attributes: ['name'],
+        },
+        {
+          model: Comment,
         },
       ],
     });
@@ -36,6 +39,9 @@ router.get('/blog/:id', async (req, res) => {
           model: User,
           attributes: ['name'],
         },
+        {
+          model: Comment,
+        },
       ],
     });
 
@@ -50,6 +56,7 @@ router.get('/blog/:id', async (req, res) => {
   }
 });
 
+//GET to dashboard/profile
 // Use withAuth middleware to prevent access to route
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
@@ -70,6 +77,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
   }
 });
 
+//GET login
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
