@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Blog } = require('../../models');
+const {Blog} = require('../../models');
 const withAuth = require('../../utils/auth');
 
 //CREATE new blog post
@@ -34,12 +34,6 @@ router.put('/:id', withAuth, async (req, res) => {
   .catch((err) => res.json(err))
 });
 
-//CREATE a neww COMMENT on a post by its id
-router.post('/:id', async (req, res) => {
-  try{
-
-  }
-});
 
 //DELETE a blog post by id
 router.delete('/:id', withAuth, async (req, res) => {
