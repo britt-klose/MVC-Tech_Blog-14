@@ -1,13 +1,16 @@
 [
     {
+      "user_id": 1,
       "description": "Wow what a cool blog post thanks for sharing!",
       "date_created": "03/08/2022"
     },
     {
+        "user_id": 2,
         "description": "Really interesting point you brought up",
         "date_created": "03/10/2022"
     },
     {
+        "user_id": 3,
         "description": "Really interesting point you brought up",
         "date_created": "03/05/2022"
     }

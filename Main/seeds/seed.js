@@ -21,10 +21,10 @@ const seedDatabase = async () => {
   }
   
 // Test if user_id works and comments load
-  for(const comment of commentData){
+  for (const comment of commentData){
     await Comment.create({
       ...comment,
-      user_id: users[Math.floor(Math.random() * users.lenth)].id,
+      user_id: users[Math.floor(Math.random() * users.lenth)],
     });
   }
 

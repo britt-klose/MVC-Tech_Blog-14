@@ -1,5 +1,6 @@
 [
   {
+    "user_id": "1",
     "title": "Why MVC is so Important",
     "date_created": "03/10/2022",
     "description": "MCV allows developers to maintain a true separation of concerns, devising their code between the Model layer for data, the View layer for design, and the Controller layer for the application logic."
@@ -11,7 +12,7 @@
   },
   {
     "title": "Object-Relational Mapping",
-    "date_created": "2/26/22",
+    "date.created": "02/26/2022",
     "description": "I have really loved learning about ORMs. It's really simplified the way I create queries in SQL!"
   }
 ]
