@@ -13,14 +13,15 @@ router.post('/', async (req, res) => {
       res.status(200).json(userData);
     });
   } catch (err) {
-    res.status(400).json(err);
+    res.status(400).json({ message: 'Password must be at least 8 characters' });
+    //took out err and put in message
   }
 });
 
 //LOGIN  using user username and password
 router.post('/login', async (req, res) => {
   try {
-    const userData = await User.findOne({ where: { email: req.body.email } });
+    const userData = await User.findOne({ where: { name: req.body.name } });
 
     if (!userData) {
       res
@@ -34,7 +35,7 @@ router.post('/login', async (req, res) => {
     if (!validPassword) {
       res
         .status(400)
-        .json({ message: 'Incorrect name or password, please try again' });
+        .json({ message: 'Incorrect username or password, please try again' });
       return;
     }
 
