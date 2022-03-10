@@ -1,9 +1,83 @@
-<div class="text-center">
-  <h2>{{name}}</h2>
-  <p>{{{get_emoji}}}</p>
-  <p>{{description}}</p>
-  <p>Created by {{user.name}} on {{format_date date_created}}</p>
-  <p>
-    <button class="btn btn-primary">View this blog</button>
-  </p>
+
+<div class ="blog-card">
+  <div class="blog-card-header">
+       {{title}}
+   </div> 
+  <div class="card-body">
+     <p>
+     Created by {{user.name}} 
+    </p>
+    <p>
+      on {{format_date blog.date_created}}
+    </p>
+    <p> 
+      {{description}}
+      </p>
+  </div>
+   
+  <div class="col-md-4">
+      <div class = "edit-blog">
+      <h2>
+      Update Post
+      </h2>
+  <form class="edit-blog-form">
+    <label for="blog-title">
+      Title:
+    </label>
+    <br />
+    <textarea id="blog-title" name="blog-title" rows="2" cols="30">
+      {{title}}
+    </textarea>
+    <br />
+    <label for="description">
+      Description:
+    </label>
+     <br />
+    <textarea id="description" name="description" rows="5" cols="30">
+      {{description}}
+    </textarea>
+    <br />
+    <button type="submit" value="Submit">
+      Submit
+    </button>
+  </form>
+  </div>
 </div>
+
+<div>
+  <h4>
+    Add Comment
+  </h4>
+    <form class="form new-comment-form">
+      <div class="form-group">
+        <label for="comment-desc">Description:</label>
+          <textarea class="form-input" id="comment-desc" name="comment-desc"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>      
+    </form>
+
+  {{#if comments.length}}
+    <div class="col-md-6 comment-list">
+      <h3>Comments:</h3>
+        
+      {{#each comments as |comment|}}
+      <div class="row mb-2">
+        <div class="col-md-8">
+          <h4><a href="/comment/{{comment.id}}">{{comment.description}}</a></h4>
+        </div>
+        <div class="col-md-4">
+          <button class="btn btn-sm btn-danger" data-id="{{comment.id}}">DELETE</button>
+        </div>
+        <div class="col-md-4">
+          <button class="btn btn-sm" data-id="{{comment.id}}">UPDATE</button>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+    {{/if}}
+</div>
+
+<script src="./js/blog.js"></script>
+
