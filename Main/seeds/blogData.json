@@ -1,12 +1,12 @@
 [
   {
     "title": "Why MVC is so Important",
-    "date_created": "3/10/22",
+    "date_created": "03/10/2022",
     "description": "MCV allows developers to maintain a true separation of concerns, devising their code between the Model layer for data, the View layer for design, and the Controller layer for the application logic."
   },
   {
     "title": "Authentication vs Authorization",
-    "date_created": "3/01/22",
+    "date_created": "03/01/2022",
     "description": "There is a difference between authentication and authorization. Authentication means confirming yourown identity. Whereas authorixation means being allowed access to the system."
   },
   {
