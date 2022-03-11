@@ -6,8 +6,6 @@ const updateBtnHandler = async (event) => {
   const title = document.querySelector('#blog-title').value.trim();
   const description = document.querySelector('#blog-desc').value.trim();
 
-
-
     const response = await fetch(`/api/blogs/${id}`, {
       method: 'PUT',
       body: JSON.stringify({
@@ -44,7 +42,7 @@ if (description) {
   });
 
   if (response.ok) {
-    document.location.replace('/dashboard');
+    document.location.replace(`/blogs/${id}`);
   } else {
     alert('Failed to create comment');
   }
@@ -61,7 +59,7 @@ const delButtonHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/dashboard');
+        document.location.replace(`/blogs/${id}`);
       } else {
         alert('Failed to delete comment');
       }
@@ -71,29 +69,29 @@ const delButtonHandler = async (event) => {
 
 //Updating your comment
 
-const updateHandler = async (event) => {
-    event.preventDefault();
+// const updateHandler = async (event) => {
+//     event.preventDefault();
 
-    if (event.target.hasAttribute('data-id')) {
-      const id = event.target.getAttribute('data-id');
+//     if (event.target.hasAttribute('data-id')) {
+//       const id = event.target.getAttribute('data-id');
 
-      const description = document.querySelector('#comment-desc').value.trim();
+//       const description = document.querySelector('#comment-desc').value.trim();
       
-      const response = await fetch(`/api/comments/${id}`, {
-        method: 'PUT',
-        body: JSON.stringify({description }),
-        headers: {
-        'Content-Type': 'application/json',
-        },
-      });
+//       const response = await fetch(`/api/comments/${id}`, {
+//         method: 'PUT',
+//         body: JSON.stringify({description }),
+//         headers: {
+//         'Content-Type': 'application/json',
+//         },
+//       });
   
-      if (response.ok) {
-        document.location.replace('/dashboard');
-      } else {
-        alert('Failed to update comment');
-      }
-    }
-  };
+//       if (response.ok) {
+//         document.location.replace('/dashboard');
+//       } else {
+//         alert('Failed to update comment');
+//       }
+//     }
+//   };
 
 
 document
