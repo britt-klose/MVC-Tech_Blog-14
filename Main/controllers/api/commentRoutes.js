@@ -3,11 +3,11 @@ const {Comment} = require('../../models');
 const withAuth = require('../../utils/auth');
 
 //CREATE a new COMMENT on a post 
-router.post('/:id', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     try {
         const newComment = await Comment.create({
           ...req.body,
-          blog_id: req.session.blog_id,
+          user_id: req.session.user_id,
         });
     
         res.status(200).json(newComment);
@@ -16,13 +16,31 @@ router.post('/:id', async (req, res) => {
       }
 });
 
+//UPDATE a comment by id
+// router.put('/:id', withAuth, async (req, res) => {
+//   Comment.update(
+//     {
+//       id:req.body.id,
+//       comment_description: req.body.comment_description
+//     },
+//     {
+//       where:{
+//         id:req.params.id
+//       }
+//     }
+//   ) .then((updatedBlog)=>{
+//     res.json(updatedBlog)
+//   })
+//   .catch((err) => res.json(err))
+// });
+
 // DELETE a comment by id
 router.delete('/:id', withAuth, async (req, res) => {
     try {
       const commentData = await Comment.destroy({
         where: {
           id: req.params.id,
-          blog_id: req.session.blog_id,
+          user_id: req.session.user_id,
         },
       });
   
