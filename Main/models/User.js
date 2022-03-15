@@ -23,9 +23,9 @@ User.init(
     password: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        min: 8,
-      },
+      // validate: {
+      //   min: [8],
+      // },
     },
   },
   {
