@@ -1,28 +1,28 @@
 // Updating blog post
 
-const updateBtnHandler = async (event) => {
-  event.preventDefault();
+// const updateBtnHandler = async (event) => {
+//   event.preventDefault();
 
-  const title = document.querySelector('#blog-title').value.trim();
-  const description = document.querySelector('#blog-desc').value.trim();
+//   const title = document.querySelector('#blog-title').value.trim();
+//   const description = document.querySelector('#blog-desc').value.trim();
 
-    const response = await fetch(`/api/blogs/${id}`, {
-      method: 'PUT',
-      body: JSON.stringify({
-        title, 
-        description, 
-      }),
-      headers: {
-      'Content-Type': 'application/json',
-    },
-    });
+//     const response = await fetch(`/api/blogs/${id}`, {
+//       method: 'PUT',
+//       body: JSON.stringify({
+//         title, 
+//         description, 
+//       }),
+//       headers: {
+//       'Content-Type': 'application/json',
+//     },
+//     });
 
-    if (response.ok) {
-      document.location.replace(`/blogs/${id}`);
-    } else {
-      alert('Failed to update post');
-    }
-  };
+//     if (response.ok) {
+//       document.location.replace(`/blogs/${id}`);
+//     } else {
+//       alert('Failed to update post');
+//     }
+//   };
 
 
 //Creating new comment
@@ -31,9 +31,10 @@ const newComment = async(event) => {
   event.preventDefault();
 
 const description = document.querySelector('#comment-desc').value.trim();
-
+console.log(description)
 if (description) {
-  const response = await fetch(`/api/comments`, {
+  console.log('front end hit')
+  const response = await fetch('/api/comments', {
     method: 'POST',
     body: JSON.stringify({description }),
     headers: {
@@ -41,11 +42,11 @@ if (description) {
     },
   });
 
-  if (response.ok) {
-    document.location.replace(`/blogs/${id}`);
-  } else {
-    alert('Failed to create comment');
-  }
+  // if (response.ok) {
+  //   document.location.replace(`/blogs/${id}`);
+  // } else {
+  //   alert('Failed to create comment');
+  // }
 }
 };
 
@@ -94,17 +95,17 @@ const delButtonHandler = async (event) => {
 //   };
 
 
-document
-  .querySelector('.edit-blog-form')
-  .addEventListener('submit', updateBtnHandler);
+// document
+//   .querySelector('.edit-blog-form')
+//   .addEventListener('submit', updateBtnHandler);
 
 document
   .querySelector('.new-comment-form')
   .addEventListener('submit', newComment);
 
-document
-  .querySelector('.comment-list')
-  .addEventListener('click', delButtonHandler);
+// document
+//   .querySelector('.comment-list')
+//   .addEventListener('click', delButtonHandler);
 
 // document
 //   .querySelector('.comment-list')

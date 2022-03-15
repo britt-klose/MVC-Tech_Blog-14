@@ -32,10 +32,10 @@ router.get('/blog/:id', async (req, res) => {
   try {
     const blogData = await Blog.findByPk(req.params.id, {
       include: [
-        {model: User, Comment}],
+        User, {model: Comment}],
     });
     const blog = blogData.get({ plain: true });
-
+    console.log(blog)
     res.render('blog', {
       ...blog,
       logged_in: req.session.logged_in
@@ -75,6 +75,24 @@ router.get('/login', (req, res) => {
   }
 
   res.render('login');
+});
+
+//Update my blog by id
+router.get('/edit/:id', async (req, res) => {
+  try {
+    const blogData = await Blog.findByPk(req.params.id, {
+      include: [
+        {model: User, Comment}],
+    });
+    const blog = blogData.get({ plain: true });
+
+    res.render('edit', {
+      ...blog,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;
