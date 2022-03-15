@@ -21,13 +21,13 @@ const seedDatabase = async () => {
   }
   
 // Test if user_id works and comments load
-  for (const comment of commentData){
-    await Comment.create({
-      ...comment,
-      user_id: users[Math.floor(Math.random() * users.lenth)],
-    });
-  }
-
+  // for (const comment of commentData){
+  //   await Comment.create({
+  //     ...comment,
+  //     blog_id: blog[Math.floor(Math.random() * blogs.lenth)].id,
+  //   });
+  // }
+  await Comment.bulkCreate(commentData);
   process.exit(0);
 };
 
