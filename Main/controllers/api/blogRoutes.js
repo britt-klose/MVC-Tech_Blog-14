@@ -17,18 +17,13 @@ router.post('/', withAuth, async (req, res) => {
 });
 
 //UPDATE a blog post by its id
-router.put('/:id', withAuth, async (req, res) => {
-  Blog.update(
-    {
-      id:req.body.id,
-      blog_title: req.body.blog_title
-    },
-    {
+router.put('/:id', withAuth, (req, res) => {
+  Blog.update(req.body, {
       where:{
-        id:req.params.id
-      }
-    }
-  ) .then((updatedBlog)=>{
+        id:req.params.id,
+      },
+  })
+   .then((updatedBlog) => {
     res.json(updatedBlog)
   })
   .catch((err) => res.json(err))

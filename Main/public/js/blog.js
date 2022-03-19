@@ -36,17 +36,17 @@ if (description) {
   console.log('front end hit')
   const response = await fetch('/api/comments', {
     method: 'POST',
-    body: JSON.stringify({description }),
+    body: JSON.stringify({description: description, blog_id: blog_id }),
     headers: {
       'Content-Type': 'application/json',
     },
   });
 
-  // if (response.ok) {
-  //   document.location.replace(`/blogs/${id}`);
-  // } else {
-  //   alert('Failed to create comment');
-  // }
+  if (response.ok) {
+    document.location.replace(`/blogs/${id}`);
+  } else {
+    alert('Failed to create comment');
+  }
 }
 };
 

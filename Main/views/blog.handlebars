@@ -1,4 +1,6 @@
-
+<script>
+  var blog_id=JSON.stringify({{id}});
+</script>
 <div class ="blog-card">
   <div class="blog-card-header">
        {{title}}
@@ -16,7 +18,7 @@
   </div>
   <br>
   <br>
-    {{#each blog.comments as |comment|}}
+    {{#each comments as |comment|}}
     <p>{{comment.description}}</p>
     {{/each}}
   <br>
