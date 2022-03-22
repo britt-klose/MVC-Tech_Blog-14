@@ -1,29 +1,3 @@
-// Updating blog post
-
-// const updateBtnHandler = async (event) => {
-//   event.preventDefault();
-
-//   const title = document.querySelector('#blog-title').value.trim();
-//   const description = document.querySelector('#blog-desc').value.trim();
-
-//     const response = await fetch(`/api/blogs/${id}`, {
-//       method: 'PUT',
-//       body: JSON.stringify({
-//         title, 
-//         description, 
-//       }),
-//       headers: {
-//       'Content-Type': 'application/json',
-//     },
-//     });
-
-//     if (response.ok) {
-//       document.location.replace(`/blogs/${id}`);
-//     } else {
-//       alert('Failed to update post');
-//     }
-//   };
-
 
 //Creating new comment
 
