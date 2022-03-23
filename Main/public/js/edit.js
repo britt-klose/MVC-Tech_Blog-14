@@ -1,16 +1,16 @@
 // Update form:
-const editBtnHandler = async (event) => {
+    const editBtnHandler = async (event) => {
     event.preventDefault();
   
-    const newTitle = document.querySelector('#new-title').value.trim();
-    const newDescription = document.querySelector('#new-desc').value.trim();
+    const title = document.querySelector('#blog-title').value.trim();
+    const description = document.querySelector('#blog-desc').value.trim();
     const id= document.querySelector("#blog-edit-id").value
 
 
-    if (newTitle && newDescription) {
+    if (title && description) {
       const response = await fetch(`/api/blogs/${id}`, {
         method: 'PUT',
-        body: JSON.stringify({newTitle, newDescription,}),
+        body: JSON.stringify({title, description}),
         headers: {
         'Content-Type': 'application/json',
         },

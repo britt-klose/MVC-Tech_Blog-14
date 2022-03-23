@@ -5,19 +5,20 @@ const newComment = async(event) => {
   event.preventDefault();
 
 const description = document.querySelector('#comment-desc').value.trim();
+
 console.log(description)
 if (description) {
   console.log('front end hit')
   const response = await fetch('/api/comments', {
     method: 'POST',
-    body: JSON.stringify({description: description, blog_id: blog_id }),
+    body: JSON.stringify({description: description, blog_id: blog_id}),
     headers: {
       'Content-Type': 'application/json',
     },
   });
 
   if (response.ok) {
-    document.location.replace(`/blogs/${id}`);
+    document.location.reload();
   } else {
     alert('Failed to create comment');
   }
@@ -67,8 +68,6 @@ const delButtonHandler = async (event) => {
 //       }
 //     }
 //   };
-
-
 // document
 //   .querySelector('.edit-blog-form')
 //   .addEventListener('submit', updateBtnHandler);
@@ -84,5 +83,3 @@ document
 // document
 //   .querySelector('.comment-list')
 //   .addEventListener('submit', updateHandler);
-
-
