@@ -19,22 +19,22 @@ router.post('/', withAuth, async (req, res) => {
 });
 
 //UPDATE a comment by id
-// router.put('/:id', withAuth, async (req, res) => {
-//   Comment.update(
-//     {
-//       id:req.body.id,
-//       comment_description: req.body.comment_description
-//     },
-//     {
-//       where:{
-//         id:req.params.id
-//       }
-//     }
-//   ) .then((updatedBlog)=>{
-//     res.json(updatedBlog)
-//   })
-//   .catch((err) => res.json(err))
-// });
+router.put('/:id', withAuth, async (req, res) => {
+  Comment.update(
+    {
+      id:req.body.id,
+      comment_description: req.body.comment_description
+    },
+    {
+      where:{
+        id:req.params.id
+      }
+    }
+  ) .then((updatedBlog)=>{
+    res.json(updatedBlog)
+  })
+  .catch((err) => res.json(err))
+});
 
 // DELETE a comment by id
 router.delete('/:id', withAuth, async (req, res) => {
