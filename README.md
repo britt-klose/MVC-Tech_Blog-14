@@ -2,7 +2,7 @@
 [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
 
   ## Description
-This application 
+  This application is a CMS-style blog site, where users and developers can create and share blog posts about technologies and comment on other developers's too. The app follows the structure of the Model View Controller (MVC) paradigm, utilizes Handlebars.js for the templating language, Sequelize as the ORM, and the express-session npm package for authentication.
 
   ## Table of Contents
 
@@ -16,14 +16,17 @@ This application
 ## Installation
 To install this application go through the following steps. 
 1. Open or clone the repository to VSC. 
-2. Make sure you have the following installed to the terminal: inquirer, and mysql2.
-3. Run node index.js. Then simply select what you want to do from the menu. 
+2. Install or verify you have the following packages installed to the terminal: inquirer, mysql2, sequelize, express, and express-session.
+3. In the terminal run node seeds/seed.js to seed the database (Optional)
+4. In the terminal run node server.js
+5. Open your local browser and type in search bar localhost:3001/
 
 ## Usage
-While running node index.js in the terminal A visual example and video demo can be seen below for more help. 
+This platform allows users to view posts comment by other users. With authentication users may also add, update, and delete their own blog posts, as well as add comments to other's posts. Visual examples and the deployed application can be found below for more details. 
+
 ![alt text](images/preview.png) 
 
-Demo: https://drive.google.com/file/d/1FR4t7W4jol459Yst3KbmyvcDxxbv8dVm/view
+Deployed application: 
 
 ## License
 This application uses ISC license 
