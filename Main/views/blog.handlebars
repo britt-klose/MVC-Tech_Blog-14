@@ -25,7 +25,8 @@
   <h5>Comments</h5>
   {{#each comments as |comment|}}
       <h6>{{format_date comment.date_created}}</h6>
-      <p>{{comment.user.name}}</p>
+      <span class="iconify" data-icon="bxs:user-pin"></span>
+      <h6>Anonymous{{comment.user.name}}</h6>
       <p>{{comment.description}}</p>  
   {{/each}}
   <br>
@@ -55,3 +56,4 @@
 <br>
 
 <script src="/js/blog.js"></script>
+<script src="https://code.iconify.design/2/2.2.0/iconify.min.js"></script>
