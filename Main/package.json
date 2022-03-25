@@ -1,5 +1,5 @@
 {
-  "name": "crowd-funding",
+  "name": "MVC-Tech_Blog-14",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -7,6 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "seed": "node seeds/seed.js"
+  },
+  "repository":{
+    "type": "git",
+    "url": "git+https://github.com/britt-klose/MVC-Tech_Blog-14.git"
   },
   "keywords": [],
   "author": "",
