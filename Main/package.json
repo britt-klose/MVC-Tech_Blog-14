@@ -12,7 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/britt-klose/MVC-Tech_Blog-14.git"
   },
-  "keywords": [],
+  "keywords": ["heroku"],
   "author": "",
   "license": "ISC",
   "dependencies": {
