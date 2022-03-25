@@ -33,6 +33,7 @@ This platform allows users to view posts comment by other users. With authentica
 Deployed application: 
 https://britt-blog-heroku.herokuapp.com/ 
 
+
 ## License
 This application uses ISC license 
 
