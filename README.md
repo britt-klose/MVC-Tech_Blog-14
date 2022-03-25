@@ -22,17 +22,16 @@ To install this application go through the following steps.
 5. Open your local browser and type in search bar localhost:3001/
 
 ## Usage
-This platform allows users to view posts comment by other users. With authentication users may also add, update, and delete their own blog posts, as well as add comments to other's posts. Visual examples and the deployed application can be found below for more details. 
+This platform allows users to view various blog posts and the comments on each. With authentication (when they are logged in) users may add, update, and delete their own blog posts, as well as add comments to other user's posts. The deployed application is linked below to visit for yourself, along with a few snap shots! 
+
+Deployed application: 
+https://britt-blog-heroku.herokuapp.com/ 
 
 ![alt text](/Images/home.png) 
 ![alt text](/Images/login.png) 
 ![alt text](/Images/dash.png) 
 ![alt text](/Images/comment.png) 
 ![alt text](/Images/update.png) 
-
-Deployed application: 
-https://britt-blog-heroku.herokuapp.com/ 
-
 
 ## License
 This application uses ISC license 
