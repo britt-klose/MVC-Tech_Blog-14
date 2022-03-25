@@ -24,7 +24,11 @@ To install this application go through the following steps.
 ## Usage
 This platform allows users to view posts comment by other users. With authentication users may also add, update, and delete their own blog posts, as well as add comments to other's posts. Visual examples and the deployed application can be found below for more details. 
 
-![alt text](images/preview.png) 
+![alt text](images/home.png) 
+![alt text](images/login.png) 
+![alt text](images/dash.png) 
+![alt text](images/comment.png) 
+![alt text](images/update.png) 
 
 Deployed application: 
 
